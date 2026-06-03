@@ -1,5 +1,5 @@
 # Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
-
+from .mamba_block import C2f_Mamba, VSSBlock
 from .tasks import (
     BaseModel,
     ClassificationModel,
@@ -24,4 +24,6 @@ __all__ = (
     "parse_model",
     "torch_safe_load",
     "yaml_model_load",
+    "C2f_Mamba",
+    "VSSBlock",
 )

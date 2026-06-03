@@ -31,6 +31,7 @@ from ultralytics.nn.modules import (
     Bottleneck,
     BottleneckCSP,
     C2f,
+    C2f_Mamba,  # <--- 加在这里
     C2fAttn,
     C2fCIB,
     C2fPSA,
@@ -1690,6 +1691,7 @@ def parse_model(d, ch, verbose=True):
             C1,
             C2,
             C2f,
+            C2f_Mamba,  # <--- 加上这一行
             C3k2,
             RepNCSPELAN4,
             ELAN1,
@@ -1716,6 +1718,7 @@ def parse_model(d, ch, verbose=True):
             C1,
             C2,
             C2f,
+            C2f_Mamba,  # <--- 在这里也加上这一行
             C3k2,
             C2fAttn,
             C3,

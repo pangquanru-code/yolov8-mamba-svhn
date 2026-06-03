@@ -1,0 +1,30 @@
+# 这是一个精简版的数据配置，触发 YOLO 自动下载和处理机制
+
+# Ultralytics 会自动将数据集下载到这个根目录的上一级 (即云服务器的 /root/autodl-tmp/datasets/ 目录下)
+# 强烈建议在 AutoDL 上将 path 指向数据盘，避免系统盘爆满
+path: ../datasets/SVHN
+
+# 数据集划分路径
+train: train/images
+val: test/images # SVHN 通常用 test 集作为验证
+test: test/images
+
+# 自动下载脚本的触发命令 (YOLOv8 内置了这个脚本)
+download: |
+  from ultralytics.utils.downloads import download
+  from pathlib import Path
+  # 这个内置脚本会将 .mat 转换为 YOLO txt 格式
+  download('https://github.com/ultralytics/yolov5/releases/download/v1.0/SVHN.zip', dir=Path(path).parent)
+
+# 类别信息
+names:
+  0: "0"
+  1: "1"
+  2: "2"
+  3: "3"
+  4: "4"
+  5: "5"
+  6: "6"
+  7: "7"
+  8: "8"
+  9: "9"
